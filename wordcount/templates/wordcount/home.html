@@ -1,0 +1,83 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            body {
+              text-align: center;
+              margin-top: 170px;
+            }
+            /* h1이 오른쪽에서 가로질러 나오는 애니메이션 효과 */
+           
+            hr {
+              width: 400px;
+            }
+           
+            a {
+              margin: 50px 0 50px 0;
+            }
+
+            h1 {
+              animation-duration: 3s;
+              animation-name: slidein;
+              margin-bottom: 50px;
+            }
+
+            @keyframes slidein {
+              from {
+                margin-left: 100%;
+                width: 300%
+              }
+          
+              to {
+                margin-left: 0%;
+                width: 100%;
+              }
+            }
+            /* 마우스를 올리면 변하는 효과 */
+            input:hover {
+            color : white;
+            background-color :black;
+            transition : 1s;
+            }
+            /* 마우스를 올리면 무지개로 변하는 효과 */
+            textarea {
+                background-color: blanchedalmond;
+                margin:30px 0 30px 0;
+            }
+
+            textarea:hover, textarea:focus { 
+                animation-duration: 3s; 
+                animation-name: rainbowLink; 
+                transition-delay: 2s;
+                animation-iteration-count: infinite;
+            } 
+            @keyframes rainbowLink {     
+             0% { background-color: #ff2a2a; }
+             15% { background-color: #ff7a2a; }
+             30% { background-color: #ffc52a; }
+             45% { background-color: #43ff2a; }
+             60% { background-color: #2a89ff; }
+             75% { background-color: #202082; }
+             90% { background-color: #6b2aff; } 
+             100% { background-color: #e82aff; }
+            }
+        </style>
+    </head>
+    <body>
+        <span><h1>단어 숫자 세주는 웹 자비스</h1></span>
+        <hr>
+    <!-- 페이지 설명(about링크)
+    글씨를 받을 수 있는 form 태그
+    숫자를 세주는 count로 갈수 있는 태그  -->
+    <a href="{% url 'about' %}">제작자</a>
+    <form action="{% url 'count' %}">
+    <textarea cols="50" rows="15" name="fulltext"></textarea>
+    <br>
+    <input type="submit" value="COUNT!"/>
+    </form>
+    </body>
+    </html>

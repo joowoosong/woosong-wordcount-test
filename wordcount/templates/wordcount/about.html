@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            body {
+                margin-top: 250px;
+                text-align: center;
+            }
+
+            h1{
+                margin-bottom: 50px;
+            }
+            div {
+                border-style: double;
+                border-width : 10px;
+                background-size: 50%;
+                margin-bottom: 50px;
+                padding: 10px;
+                width:700px;
+                margin-left: 430px;
+            }
+            div:hover {
+            color : white;
+            background-color :black;
+            transition : 1s;
+            }
+
+            body:hover, body:focus { 
+                animation-duration: 3s; 
+                animation-name: rainbowLink; 
+                transition-delay: 2s;
+                animation-iteration-count: infinite;
+            } 
+            @keyframes rainbowLink {     
+             0% { background-color: #ff2a2a; }
+             15% { background-color: #ff7a2a; }
+             30% { background-color: #ffc52a; }
+             45% { background-color: #43ff2a; }
+             60% { background-color: #2a89ff; }
+             75% { background-color: #202082; }
+             90% { background-color: #6b2aff; } 
+             100% { background-color: #e82aff; }
+            }
+    </style>
+</head>
+<body>
+        <h1>ABOUT</h1>
+        <div>
+        <p>멋쟁이 사자처럼 삼육대학교 7기 김정환이 만든 문장의 숫자를 세는 자비스 입니다.</p>
+        </div>
+        <a href="{% url 'home' %}">Go home html</a>
+</body>
+</html>

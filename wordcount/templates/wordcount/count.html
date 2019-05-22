@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        div {
+            border-style: dotted;
+            border-width : 10px;
+            padding-bottom: 20px;
+            margin: 0 400px 0 400px;
+        }
+
+        div:hover, div:focus { 
+                animation-duration: 3s; 
+                animation-name: rainbowLink; 
+                transition-delay: 2s;
+                animation-iteration-count: infinite;
+            } 
+            @keyframes rainbowLink {     
+             0% { background-color: #ff2a2a; }
+             15% { background-color: #ff7a2a; }
+             30% { background-color: #ffc52a; }
+             45% { background-color: #43ff2a; }
+             60% { background-color: #2a89ff; }
+             75% { background-color: #202082; }
+             90% { background-color: #6b2aff; } 
+             100% { background-color: #e82aff; }
+            }
+
+        hr {
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+        <div>
+        <h1>당신이 입력한 텍스트는 {{total}} 단어로 구성</h1>
+        <a href="{% url 'home' %}">Try Agian</a>
+        </div>
+        <h2>입력한 전체 텍스트</h2>
+        {{fulltext}}
+        <hr>
+        
+        <h1>단어 - 단어 나온 횟수</h1>
+        {% for word, countTotal in dictionary %}
+        {{word}}-{{countTotal}}
+        <br>
+        {% endfor %}
+
+</body>
+</html>
